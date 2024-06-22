@@ -1,5 +1,5 @@
-const joi = require('joi');
-const transactionService = require('../services/transactionService');
+import joi from 'joi';
+import * as transactionService from '../services/transactionService.js';
 
 const transactionSchema = joi.object({
     transactionId: joi.string().required(),
@@ -10,10 +10,9 @@ const transactionSchema = joi.object({
     description: joi.string(),
     status: joi.string().required(),
     statusDetails: joi.string(),
-    date: joi.date(),
 });
 
-exports.createTransaction = async (req, res, next) => {
+export const createTransaction = async (req, res, next) => {
     const { error } = transactionSchema.validate(req.body);
     if (error) 
         return res.status(400).json({ error: error.details[0].message });
@@ -26,7 +25,7 @@ exports.createTransaction = async (req, res, next) => {
     }
 };
 
-exports.getTransactions = async (req, res, next) => {
+export const getTransactions = async (req, res, next) => {
     try {
         const transactions = await transactionService.getTransactions();
         res.status(200).json({ status: 'success', data: transactions, message: 'Transactions retrieved successfully' });

@@ -1,10 +1,10 @@
-const Transaction = require('../models/Transaction');
+import Transaction from "../models/Transaction.js";
 
-exports.createTransaction = async (transactionData) => {
+export const createTransaction = async (transactionData) => {
     const transaction = new Transaction(transactionData);
     return await transaction.save();
 }
 
-exports.getTransactions = async () => {
+export const getTransactions = async () => {
     return await Transaction.find();
 }
