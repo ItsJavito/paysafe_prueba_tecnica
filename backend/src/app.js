@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const connectDB = require('./config/db');
 
 // conexion a base de datos
-
+connectDB();
 
 // configuracion de express
 const app = express();
