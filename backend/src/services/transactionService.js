@@ -8,3 +8,7 @@ export const createTransaction = async (transactionData) => {
 export const getTransactions = async () => {
     return await Transaction.find();
 }
+
+export const getTransactionsByFilters = async (filters) => {
+    return await Transaction.find(filters);
+}
