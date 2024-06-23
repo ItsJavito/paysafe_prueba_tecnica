@@ -14,7 +14,6 @@ const connectDB = async () => {
 };
 
 const seedTransactions = async () => {
-    const statuses = ["procesando", "rechazado", "pago cancelado", "completada"];
     const transactions = [];
 
     for (let i = 0; i < 30; i++) {
