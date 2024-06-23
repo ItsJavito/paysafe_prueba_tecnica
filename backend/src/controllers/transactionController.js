@@ -1,5 +1,6 @@
 import joi from 'joi';
 import * as transactionService from '../services/transactionService.js';
+import { TRANSACTION_STATUSES } from '../../constants/transactionStatus.js';
 
 const transactionSchema = joi.object({
     transactionId: joi.string().required(),
@@ -8,7 +9,7 @@ const transactionSchema = joi.object({
     paymentMethod: joi.string().required(),
     currency: joi.string().required(),
     description: joi.string(),
-    status: joi.string().required(),
+    status: joi.string().valid(...Object.values(TRANSACTION_STATUSES)).required(),
     statusDetails: joi.string(),
 });
 

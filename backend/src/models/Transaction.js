@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { TRANSACTION_STATUSES } from "../../constants/transactionStatus.js";
+
 const transactionSchema = new mongoose.Schema({
     transactionId: {
         type: String,
@@ -27,6 +29,7 @@ const transactionSchema = new mongoose.Schema({
     status: {
         type: String,
         required: true,
+        enum: Object.values(TRANSACTION_STATUSES)
     },
     statusDetails: {
         type: String,
