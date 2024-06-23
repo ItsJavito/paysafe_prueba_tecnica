@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import transactionRoutes from './routes/transactionRoutes.js';
+import reportRoutes from './routes/reportRoutes.js';
 import connectDB from './config/db.js';
 import errorHandler from './middleware/errorMiddleware.js';
 import swaggerDocs from './docs/swagger.js';
@@ -23,6 +24,7 @@ swaggerDocs(app);
 
 // rutas
 app.use('/api', transactionRoutes);
+app.use('/api/reports', reportRoutes);
 
 // error middleware
 app.use(errorHandler);

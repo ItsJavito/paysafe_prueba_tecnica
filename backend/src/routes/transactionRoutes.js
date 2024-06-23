@@ -58,7 +58,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /transactions:
+ * /api/transactions:
  *   post:
  *     summary: Create a new transaction
  *     tags: [Transactions]
@@ -82,7 +82,7 @@ router.post('/transactions', createTransaction);
 
 /**
  * @swagger
- * /transactions:
+ * /api/transactions:
  *   get:
  *     summary: Get all transactions
  *     tags: [Transactions]
@@ -100,7 +100,7 @@ router.get('/transactions', getTransactions);
 
 /**
  * @swagger
- * /transactions/filter:
+ * /api/transactions/filter:
  *   get:
  *     summary: Get transactions by filters
  *     tags: [Transactions]
