@@ -35,7 +35,7 @@ const TransactionFilterForm = () => {
                         name="transactionId"
                         value={formData.transactionId}
                         onChange={handleChange}
-                        placeholder="Ingres Id de Transacción"
+                        placeholder="Ingresa Id de Transacción"
                     />
                 </Form.Group>
 
